@@ -4,10 +4,12 @@ import { jogosRegistroComponent } from './jogos-registro/jogos-registro.componen
 import { UsuarioRegistroComponent } from './usuario-registro/usuario-registro.component';
 import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
 import { ListaReviewsComponent } from './lista-reviews/lista-reviews.component';
+import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
+
 
 
 const routes: Routes = [
-  
+  { path: '', component: MenuPrincipalComponent },
   { path: 'usuario-registro', component: UsuarioRegistroComponent },
   { path: 'usuario-login', component:  UsuarioLoginComponent },
   { path: 'jogo-registro', component: jogosRegistroComponent },
