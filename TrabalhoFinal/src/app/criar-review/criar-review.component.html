@@ -1,0 +1,18 @@
+<div class="card">
+    <h5 class="card-header">Criar Review</h5>
+    <div class="card-body">
+        <form #orderForm="ngForm">
+            <div class="form-group">
+                <label for="criarReview">Review</label>
+                <input type="text" class="form-control" id="criarReview" aria-describedby="criar_review"
+                    [(ngModel)]="reviewModel.review" name="criarReview">
+            </div>
+            <div class="form-group">
+                <label for="notaReview">Nota</label>
+                <input type="number" class="form-control" id="notaReview" aria-describedby="notaReview"
+                    [(ngModel)]="reviewModel.nota" name="notaReview" min="1" max="10">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()" routerLink="/lista-reviews">Submit</button>
+        </form>
+    </div>
+</div>
