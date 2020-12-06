@@ -5,16 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioRegistroComponent } from './usuario-registro/usuario-registro.component';
+import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
+import { jogosRegistroComponent } from './jogos-registro/jogos-registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioRegistroComponent
+    UsuarioRegistroComponent,
+    jogosRegistroComponent,
+    UsuarioLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
