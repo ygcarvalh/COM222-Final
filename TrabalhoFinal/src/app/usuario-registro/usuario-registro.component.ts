@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from "../usuario";
-
+import { UsuarioService } from '../usuarioRegistro.service';
 
 @Component({
     selector: 'app-usuario-registro',
@@ -8,8 +8,9 @@ import { Usuario } from "../usuario";
     styleUrls: ['./usuario-registro.component.css']
 })
 export class UsuarioRegistroComponent implements OnInit {
-
-    constructor() { }
+    
+    constructor(
+        private usuarioService: UsuarioService) { }
 
     usuario: Usuario;
     nomeRegistro: string;
@@ -17,12 +18,22 @@ export class UsuarioRegistroComponent implements OnInit {
     senhaRegistro: string;
 
 
+    //usuarioModel = new Usuario('','','');
 
-    usuarioModel = new Usuario('','','');
-    ngOnInit(): void {
+    ngOnInit(){
+        this.usuarioService.get()
+            //.subscribe((usus) => this.usuarios = usus);
     }
 
     onSubmit() {
+        this.usuarioService.add({nome: this.nomeRegistro, email: this.emailRegistro, senha: this.senhaRegistro})
+            .subscribe(
+                (usu) => {
+                    console.log(usu);
+                },
+                (err) => console.error(err)
+            )
+        /*this.usuarioService.add()
 
         let nome_registro = this.usuarioModel.nome;
         let email_registro = this.usuarioModel.email;
@@ -30,7 +41,13 @@ export class UsuarioRegistroComponent implements OnInit {
 
         this.usuario = new Usuario(nome_registro, email_registro, senha_registro);
 
-        console.log(this.usuario);
+        console.log(this.usuario);*/
+    }
+
+    clearFields(){
+        this.nomeRegistro = '';
+        this.emailRegistro = '';
+        this.senhaRegistro = '';
     }
 
 }
