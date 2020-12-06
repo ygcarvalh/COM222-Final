@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { UsuarioRegistroComponent } from './usuario-registro/usuario-registro.component';
 import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
 import { jogosRegistroComponent } from './jogos-registro/jogos-registro.component';
+import { ListaReviewsComponent } from './lista-reviews/lista-reviews.component';
+import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
+import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioRegistroComponent,
     jogosRegistroComponent,
-    UsuarioLoginComponent
+    UsuarioLoginComponent,
+    ListaReviewsComponent,
+    ListaJogosComponent,
+    MenuPrincipalComponent
   ],
   imports: [
     BrowserModule,
