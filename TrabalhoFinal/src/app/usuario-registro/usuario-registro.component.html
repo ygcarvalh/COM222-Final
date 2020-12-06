@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        Registro de Usuário
+    </div>
+    <div class="card-body">
+        <form #orderForm="ngForm">
+            <div class="form-group">
+                <label for="nomeRegistro">Nome</label>
+                <input type="text" class="form-control" id="nomeRegistro" aria-describedby="nome_registro" [(ngModel)]="nomeRegistro" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="emailRegistro">Email address</label>
+                <input type="email" class="form-control" id="emailRegistro" aria-describedby="email_help" [(ngModel)]="emailRegistro" name="email">
+            </div>
+            <div class="form-group">
+                <label for="senhaRegistro">Password</label>
+                <input type="password" class="form-control" id="senhaRegistro" [(ngModel)]="senhaRegistro" name="senha">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+        </form>
+    </div>
+</div>
