@@ -9,11 +9,11 @@
                 <input type="text" class="form-control" id="nomeRegistro" aria-describedby="nome_registro" [(ngModel)]="usuarioModel.nome" name="nome">
             </div>
             <div class="form-group">
-                <label for="emailRegistro">Email address</label>
+                <label for="emailRegistro">Email</label>
                 <input type="email" class="form-control" id="emailRegistro" aria-describedby="email_help" [(ngModel)]="usuarioModel.email" name="email">
             </div>
             <div class="form-group">
-                <label for="senhaRegistro">Password</label>
+                <label for="senhaRegistro">Senha</label>
                 <input type="password" class="form-control" id="senhaRegistro" [(ngModel)]="usuarioModel.senha" name="senha">
             </div>
             <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>

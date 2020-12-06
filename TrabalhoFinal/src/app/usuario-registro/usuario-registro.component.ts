@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from "../usuario";
 
-
 @Component({
     selector: 'app-usuario-registro',
     templateUrl: './usuario-registro.component.html',
@@ -15,8 +14,6 @@ export class UsuarioRegistroComponent implements OnInit {
     nomeRegistro: string;
     emailRegistro: string;
     senhaRegistro: string;
-
-
 
     usuarioModel = new Usuario('','','');
     ngOnInit(): void {
