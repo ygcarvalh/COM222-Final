@@ -5,9 +5,9 @@ var Usuario = require('./usuarioRegistro');
 router.post('/', function(req , res){
     console.log(req.boby);
     let u = new Usuario({
-        name: req.body.name,
+        nome: req.body.nome,
         email: req.body.email,
-        password: req.body.password
+        senha: req.body.senha
     })
     u.save((err, usu) =>{
         if(err)
