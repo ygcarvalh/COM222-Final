@@ -6,20 +6,22 @@ import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
 import { ListaReviewsComponent } from './lista-reviews/lista-reviews.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { CriarReviewComponent } from './criar-review/criar-review.component';
+import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
 
 
 
 const routes: Routes = [
-  { path: 'menu-principal', component: MenuPrincipalComponent },
-  { path: 'usuario-registro', component: UsuarioRegistroComponent },
-  { path: 'usuario-login', component:  UsuarioLoginComponent },
-  { path: 'jogo-registro', component: jogosRegistroComponent },
-  { path: 'lista-reviews', component: ListaReviewsComponent },
-  { path: 'criar-review', component: CriarReviewComponent }
+	{ path: '', component: MenuPrincipalComponent },
+	{ path: 'usuario-registro', component: UsuarioRegistroComponent },
+	{ path: 'usuario-login', component: UsuarioLoginComponent },
+	{ path: 'jogo-registro', component: jogosRegistroComponent },
+	{ path: 'lista-reviews', component: ListaReviewsComponent },
+	{ path: 'criar-review', component: CriarReviewComponent },
+	{ path: 'lista-jogos', component: ListaJogosComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

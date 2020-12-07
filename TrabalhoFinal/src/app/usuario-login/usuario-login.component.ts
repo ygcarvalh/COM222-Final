@@ -13,19 +13,16 @@ export class UsuarioLoginComponent implements OnInit {
     emailLogin: string;
     senhaLogin: string;
 
-    usuarioModelLogin = new Usuario('','','');
+    usuarioModelLogin = new Usuario('', '', '');
     ngOnInit(): void {
     }
 
     onSubmit() {
-
-     
         let email_registro = this.usuarioModelLogin.email;
         let senha_registro = this.usuarioModelLogin.senha;
 
         console.log(email_registro);
         console.log(senha_registro);
-    
     }
 
 }

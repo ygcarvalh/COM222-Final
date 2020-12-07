@@ -23,9 +23,10 @@ export class jogosRegistroComponent implements OnInit {
         let resumo = this.jogoModel.resumo;
         let dev = this.jogoModel.dev;
         let genero = this.jogoModel.genero;
+        let imagem = this.jogoModel.pathImagemJogo;
 
-        this.jogo = new jogo(consoles, titulo, resumo, dev, genero, '')
-        console.log(jogo);
+        this.jogo = new jogo(consoles, titulo, resumo, dev, genero, imagem)
+        console.log(this.jogo);
    
     }
 
