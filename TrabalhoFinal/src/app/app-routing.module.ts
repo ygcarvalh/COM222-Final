@@ -5,7 +5,8 @@ import { UsuarioRegistroComponent } from './usuario-registro/usuario-registro.co
 import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
 import { ListaReviewsComponent } from './lista-reviews/lista-reviews.component';
 import { CriarReviewComponent } from './criar-review/criar-review.component';
-
+import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
+import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
 
 const routes: Routes = [
 	{ path: '', component: MenuPrincipalComponent },
