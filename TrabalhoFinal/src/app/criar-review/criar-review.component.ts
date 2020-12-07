@@ -8,7 +8,6 @@ import { Review } from '../review';
 })
 export class CriarReviewComponent implements OnInit {
 
-
 	REVIEWS: Review[] = [];
 	review: Review;
 	reviewModel = new Review("", 0);
@@ -19,15 +18,13 @@ export class CriarReviewComponent implements OnInit {
 	}
 
 	onSubmit() {
-		var resumo = this.reviewModel.review;
-		var nota = this.reviewModel.nota;
+		var textoReview = this.reviewModel.review;
+		var notaReview = this.reviewModel.nota;
 
-		this.review = new Review(resumo, nota);
+		this.review = new Review(textoReview, notaReview);
 
 		console.log(this.review);
-
 		this.REVIEWS.push(this.review);
-
 		console.log(this.REVIEWS);
 	}
 

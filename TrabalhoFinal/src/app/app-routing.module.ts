@@ -8,17 +8,17 @@ import { CriarReviewComponent } from './criar-review/criar-review.component';
 
 
 const routes: Routes = [
-  
-  { path: 'usuario-registro', component: UsuarioRegistroComponent },
-  { path: 'usuario-login', component:  UsuarioLoginComponent },
-  { path: 'jogo-registro', component: jogosRegistroComponent },
-  { path: 'lista-reviews', component: ListaReviewsComponent },
-  { path: 'criar-review', component: CriarReviewComponent }
-
+	{ path: '', component: MenuPrincipalComponent },
+	{ path: 'usuario-registro', component: UsuarioRegistroComponent },
+	{ path: 'usuario-login', component: UsuarioLoginComponent },
+	{ path: 'jogo-registro', component: jogosRegistroComponent },
+	{ path: 'lista-reviews', component: ListaReviewsComponent },
+	{ path: 'criar-review', component: CriarReviewComponent },
+	{ path: 'lista-jogos', component: ListaJogosComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

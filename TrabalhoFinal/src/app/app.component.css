@@ -32,3 +32,15 @@ nav a.active {
     float: none;
     margin-bottom: 10px;
 }
+
+.botao-login {
+    margin-right: 1.5em;
+}
+
+.botao-cadastro {
+    margin-right: 1.5em;
+}
+
+.imagem-logo {
+    width: 50px;
+}
