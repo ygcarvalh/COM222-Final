@@ -3,6 +3,7 @@ import { JogoService } from '../jogoRegistro.service';
 
 import { AppComponent } from '../app.component'
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class jogosRegistroComponent implements OnInit {
 
     constructor(
         private jogoService: JogoService,
-        private statusUser: AppComponent) { }
+        private statusUser: AppComponent,
+        private http: HttpClient) { }
 
     consoleJogo: string;
     tituloJogo: string;
@@ -69,5 +71,19 @@ export class jogosRegistroComponent implements OnInit {
             icon: 'success',
             title: 'Cadastro do jogo realizado com sucesso!'
         })
+    }
+
+    onChange(event) {
+        // console.log(event);
+
+        // var selectedFiles = <FileList>event.srcElement.files;
+        // var foto = selectedFiles[0];
+
+        // const formData = new FormData();
+        // formData.append(this.tituloJogo, foto);
+
+        // this.http.post<any>("http://localhost:8080/fotos", formData)
+        //     .subscribe(resposta => console.log('Upload ok'));
+        
     }
 }

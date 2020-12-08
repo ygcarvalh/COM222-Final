@@ -35,18 +35,18 @@ export class CriarReviewComponent implements OnInit {
 
         var idJogo = "";
 
-        this.jogoService.get()
-            .subscribe(
-                data => {
-                    data.forEach(element => {
-                        if(this.idJogoSelecionado == element._id){
-                            idJogo = element._id;
-                        }
-                    });
-                },
-                error => {
-                    console.log(error);
-                });
+        // this.jogoService.get()
+        //     .subscribe(
+        //         data => {
+        //             data.forEach(element => {
+        //                 if(this.idJogoSelecionado == element._id){
+        //                     idJogo = element._id;
+        //                 }
+        //             });
+        //         },
+        //         error => {
+        //             console.log(error);
+        //         });
 
         this.reviewService.add({
             nome: this.reviewModel.nome, review: this.reviewModel.review, nota: this.reviewModel.nota,

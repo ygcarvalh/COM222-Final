@@ -44,15 +44,14 @@
                         <option value="Simulacao">Simulação</option>
                     </select>
                 </div>
-                <!-- <div class="col-md-3 mt-4">
+                <div class="col-md-3 mt-4">
                     <label>Selecione uma imagem:</label>
+                    <input type="file" [(ngModel)]="pathImagemJogo" name="pathImagem" (change)="onChange($event)">
 
-                    <input type="file" [(ngModel)]="pathImagemJogo" name="pathImagem">
-
-                </div> -->
+                </div>
             </div>
 
-            <button type="submit " class="btn btn-primary " (click)="onSubmit() ">Cadastrar Jogo</button>
+            <button type="submit " class="btn btn-primary " (click)="onSubmit()">Cadastrar Jogo</button>
         </form>
     </div>
 </div>
