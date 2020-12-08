@@ -11,11 +11,9 @@ import { JogoService } from '../jogoRegistro.service';
 export class ListaJogosComponent implements OnInit {
 
     listaJogos: any;
-    teste = null;
-
+   
     constructor(
       private jogoService: JogoService) { }
-
 
     ngOnInit(): void {
         this.jogoService.get()
