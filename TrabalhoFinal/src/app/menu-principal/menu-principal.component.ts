@@ -67,6 +67,8 @@ export class MenuPrincipalComponent {
   voltaMenuPrincipal() {
 
     this.jogosNaoListados = true;
+    this.reviewsNaoListadas = true;
+    this.criarReview = false;
   }
 
   listarReview(id) {
@@ -79,7 +81,7 @@ export class MenuPrincipalComponent {
     this.reviewService.get()
       .subscribe(
         data => {
-          this. listaReview = []
+          this.listaReview = []
           let array = data
           array.forEach(element => {
             if (element.jogo == this.id_jogo)
@@ -109,6 +111,7 @@ export class MenuPrincipalComponent {
         (jog) => {
           console.log(jog);
           this.clearFields();
+          this.listarReview(this.id_jogo)
         },
         (err) => console.error(err)
       )
