@@ -7,7 +7,7 @@
             <div class="form-group row">
                 <div class="col-md-3">
                     <label for="select-console">Selecione o tipo do Console:</label>
-                    <select id="select-console" class="browser-default custom-select" [(ngModel)]="jogoModel.console"
+                    <select id="select-console" class="browser-default custom-select" [(ngModel)]="consoleJogo"
                         name="console" >
                         <option selected value="-1">Selecione...</option>
                         <option value="xbox">Xbox</option>
@@ -20,23 +20,23 @@
                 <div class="col-md-3">
                     <label for="nomeRegistro ">Título</label>
                     <input type="text " class="form-control " id="titulo " aria-describedby="titulo "
-                        [(ngModel)]="jogoModel.titulo " name="titulo" >
+                        [(ngModel)]="tituloJogo " name="titulo" >
                 </div>
 
                 <div class="col-md-6">
                     <label for="emailRegistro ">Resumo</label>
                     <input type="email " class="form-control " id="resumo" aria-describedby="resumo"
-                        [(ngModel)]="jogoModel.resumo" name="resumo" >
+                        [(ngModel)]="resumoJogo" name="resumo" >
                 </div>
 
                 <div class="col-md-3 mt-4">
                     <label for="senhaRegistro ">Desenvolvedor</label>
-                    <input type="password " class="form-control " id="dev" [(ngModel)]="jogoModel.dev " name="dev" >
+                    <input type="password " class="form-control " id="dev" [(ngModel)]="devJogo " name="dev" >
                 </div>
 
                 <div class="col-md-3 mt-4">
                     <label for="select-console">Selecione o Gênero:</label>
-                    <select id="select-console" class="browser-default custom-select" [(ngModel)]="jogoModel.genero"
+                    <select id="select-console" class="browser-default custom-select" [(ngModel)]="generoJogo"
                         name="genero" >
                         <option selected value="-1">Selecione...</option>
                         <option value="Acao">Ação</option>

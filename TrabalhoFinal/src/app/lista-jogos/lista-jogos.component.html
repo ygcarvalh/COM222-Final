@@ -1,41 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="card col-sm-3 mt-5" style="width: 18rem;">
+        <div *ngFor="let jogo of listaJogos" class="card col-sm-3 col-md-4 mt-5" style="width: 20rem;">
             <a routerLink="/lista-reviews"><img src="..." class="card-img-top" alt="Imagem do Jogo"></a>
             <div class="card-body">
-                <h5 class="card-title"><a routerLink="/lista-reviews">Nome do Jogo</a></h5>
-                <p class="card-text">Resumo.</p>
+                <h5 class="card-title"><a routerLink="/lista-reviews">{{jogo.titulo}}</a></h5>
+                <p class="card-text">{{jogo.resumo}}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Desenvolvedor</li>
-                <li class="list-group-item">Gênero</li>
-                <li class="list-group-item">Avaliação</li>
-            </ul>
-        </div>
-
-        <div class="card col-sm-3 mt-5" style="width: 18rem; margin-left: auto">
-            <a routerLink="/lista-reviews"><img src="..." class="card-img-top" alt="Imagem do Jogo"></a>
-            <div class="card-body">
-                <h5 class="card-title"><a routerLink="/lista-reviews">Nome do Jogo</a></h5>
-                <p class="card-text">Resumo.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Desenvolvedor</li>
-                <li class="list-group-item">Gênero</li>
-                <li class="list-group-item">Avaliação</li>
-            </ul>
-        </div>
-
-        <div class="card col-sm-3 mt-5" style="width: 18rem; margin-left: auto">
-            <a routerLink="/lista-reviews"><img src="..." class="card-img-top" alt="Imagem do Jogo"></a>
-            <div class="card-body">
-                <h5 class="card-title"><a routerLink="/lista-reviews">Nome do Jogo</a></h5>
-                <p class="card-text">Resumo.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Desenvolvedor</li>
-                <li class="list-group-item">Gênero</li>
-                <li class="list-group-item">Avaliação</li>
+                <li class="list-group-item">Desenvolvedora: {{jogo.dev}}</li>
+                <li class="list-group-item">Gênero: {{jogo.genero}}</li>
+                <li class="list-group-item">nota</li>
             </ul>
         </div>
     </div>

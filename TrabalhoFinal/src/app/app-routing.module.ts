@@ -8,7 +8,6 @@ import { CriarReviewComponent } from './criar-review/criar-review.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
 
-
 const routes: Routes = [
 	{ path: 'menu-principal', component: MenuPrincipalComponent },
 	{ path: 'usuario-registro', component: UsuarioRegistroComponent },
