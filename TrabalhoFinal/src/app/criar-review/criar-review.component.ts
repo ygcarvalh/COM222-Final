@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Review } from '../review';
 
+import {Router} from '@angular/router';
+import {AppComponent} from '../app.component'
+
 @Component({
 	selector: 'app-criar-review',
 	templateUrl: './criar-review.component.html',
@@ -12,7 +15,10 @@ export class CriarReviewComponent implements OnInit {
 	review: Review;
 	reviewModel = new Review("", 0);
 
-	constructor() { }
+	usuarioNaoLogado = this.statusUser.getStatusUserLogado();
+
+	constructor( private router: Router,
+        private statusUser :AppComponent) { }
 
 	ngOnInit(): void {
 	}

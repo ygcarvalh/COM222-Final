@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Jogo } from "../jogo";
 import { JogoService } from '../jogoRegistro.service';
 
+import {Router} from '@angular/router';
+import {AppComponent} from '../app.component'
+
 @Component({
     selector: 'app-jogos-registro',
     templateUrl: './jogos-registro.component.html',
@@ -10,7 +13,8 @@ import { JogoService } from '../jogoRegistro.service';
 export class jogosRegistroComponent implements OnInit {
 
     constructor(
-        private jogoService: JogoService) { }
+        private jogoService: JogoService,
+        private statusUser :AppComponent) { }
 
     consoleJogo: string;
     tituloJogo: string;
@@ -18,6 +22,9 @@ export class jogosRegistroComponent implements OnInit {
     devJogo: string;
     generoJogo: string;
     pathImagemJogo: string;
+
+
+    usuarioNaoLogado = this.statusUser.getStatusUserLogado();
 
     ngOnInit(): void {
         this.jogoService.get()
