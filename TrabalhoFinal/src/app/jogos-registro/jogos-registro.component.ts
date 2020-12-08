@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { jogo } from "../jogo";
+import { Jogo } from "../jogo";
+import { JogoService } from '../jogoRegistro.service';
 
 @Component({
     selector: 'app-jogos-registro',
@@ -8,26 +9,40 @@ import { jogo } from "../jogo";
 })
 export class jogosRegistroComponent implements OnInit {
 
-    constructor() { }
+    constructor(
+        private jogoService: JogoService) { }
 
-    jogo: jogo;
+    consoleJogo: string;
+    tituloJogo: string;
+    resumoJogo: string;
+    devJogo: string;
+    generoJogo: string;
+    pathImagemJogo: string;
 
-    jogoModel = new jogo('', '', '', '', '', '');
     ngOnInit(): void {
+        this.jogoService.get()
     }
 
     onSubmit() {
 
-        let consoles = this.jogoModel.console;
-        let titulo = this.jogoModel.titulo;
-        let resumo = this.jogoModel.resumo;
-        let dev = this.jogoModel.dev;
-        let genero = this.jogoModel.genero;
-        let imagem = this.jogoModel.pathImagemJogo;
+        this.jogoService.add({console: this.consoleJogo, titulo: this.tituloJogo, resumo: this.resumoJogo,
+            dev: this.devJogo, genero: this.generoJogo, pathImagem: this.pathImagemJogo})
+            .subscribe(
+                (jog) => {
+                    console.log(jog);
+                    this.clearFields();
+                },
+                (err) => console.error(err)
+            )
+    }
 
-        this.jogo = new jogo(consoles, titulo, resumo, dev, genero, imagem)
-        console.log(this.jogo);
-   
+    clearFields(){
+        this.consoleJogo = '';
+        this.tituloJogo = '';
+        this.resumoJogo = '';
+        this.devJogo = '';
+        this.generoJogo = '';
+        this.pathImagemJogo = '';
     }
 
 }

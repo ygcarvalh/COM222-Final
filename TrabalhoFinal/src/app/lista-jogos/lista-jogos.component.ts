@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlHandlingStrategy } from '@angular/router';
+import { Jogo } from "../jogo";
+import { JogoService } from '../jogoRegistro.service';
 
 @Component({
   selector: 'app-lista-jogos',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaJogosComponent implements OnInit {
 
-  constructor() { }
+    listaJogos: any;
+    teste = null;
 
-  ngOnInit(): void {
-  }
+    constructor(
+      private jogoService: JogoService) { }
+
+
+    ngOnInit(): void {
+        this.jogoService.get()
+          .subscribe(
+            data => {
+              this.listaJogos = data;
+              console.log(data);
+            },
+            error  => {
+              console.log(error);
+          });
+    }
 
 }
