@@ -2,38 +2,46 @@
     <div class="row">
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <img class="card-img-top imagem-menu-principal" src="../../assets/images/xbox-logo.png" alt="Card image cap">
+                <img class="card-img-top imagem-menu-principal" src="../../assets/images/xbox-logo.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text text-center">Xbox</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('xbox')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('xbox')">Selecionar Console</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <a href="#"><img class="card-img-top imagem-menu-principal" src="../../assets/images/playstation-logo.png" alt="Card image cap" style="width: 194px;"></a>
+                <a href="#"><img class="card-img-top imagem-menu-principal"
+                        src="../../assets/images/playstation-logo.png" alt="Card image cap" style="width: 194px;"></a>
                 <div class="card-body">
                     <p class="card-text text-center">Playstation</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('playstation')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('playstation')">Selecionar Console</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <img class="card-img-top imagem-menu-principal" src="../../assets/images/switch-logo.png" alt="Card image cap">
+                <img class="card-img-top imagem-menu-principal" src="../../assets/images/switch-logo.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text text-center">Nintendo Switch</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('switch')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('switch')">Selecionar Console</button>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <img class="card-img-top imagem-menu-principal" src="../../assets/images/computer-logo.png" alt="Card image cap">
+                <img class="card-img-top imagem-menu-principal" src="../../assets/images/computer-logo.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text text-center">Computador</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('pc')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('pc')">Selecionar Console</button>
                 </div>
             </div>
         </div>
@@ -56,9 +64,27 @@
             </ul>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary text-center botao-menu-principal" (click)="voltaMenuPrincipal()">Voltar</button>
+            <button class="btn btn-primary text-center botao-menu-principal"
+                (click)="voltaMenuPrincipal()">Voltar</button>
 
         </div>
 
     </div>
 </div>
+
+<!-- <div *ngIf="jogosReviews" class="container">
+    <div *ngFor="let review of listaReviews" class="card">
+        <div class="card-header">{{review.nome}}</div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{review.review}}</p>
+                <ul class="list-group list-grup-flush">
+                    <li class="list-group-item">Nota: {{review.nota}}</li>
+                </ul>
+            </blockquote>
+        </div>
+    </div>
+    <button routerLink="/criar-review" class="btn btn-primary botao-review">
+        Criar Review
+    </button>
+</div> -->
