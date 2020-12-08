@@ -49,6 +49,9 @@
 </div>
 
 <div *ngIf="!jogosNaoListados" class="container">
+    <h3>
+        <center>{{consoleAtual}}</center>
+    </h3>
     <div class="row">
         <div *ngFor="let jogo of listaJogos" class="card col-sm-3 col-md-4 mt-5 ml-3" style="width: 20rem;">
             <a routerLink="/lista-reviews"><img src="..." class="card-img-top" alt="Imagem do Jogo"></a>
@@ -63,9 +66,8 @@
                 <li class="list-group-item">Nota</li>
             </ul>
         </div>
-        <div class="col-md-2">
-            <button class="btn btn-primary text-center botao-menu-principal"
-                (click)="voltaMenuPrincipal()">Voltar</button>
+        <div class="col-md-2 mt-5">
+            <button class="btn btn-primary text-center botao-menu-principal" (click)="voltaMenuPrincipal()">Voltar</button>
 
         </div>
 
