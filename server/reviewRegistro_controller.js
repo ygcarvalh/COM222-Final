@@ -6,7 +6,8 @@ router.post('/', function(req , res){
     console.log(req.boby);
     let u = new Review({
         review: req.body.review,
-        nota: req.body.nota
+        nota: req.body.nota,
+        jogo: req.body.jogo
     })
     u.save((err, rev) =>{
         if(err)
