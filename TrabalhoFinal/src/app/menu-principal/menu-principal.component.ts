@@ -13,6 +13,7 @@ export class MenuPrincipalComponent {
   listaJogos = [];
   consoleSelecionado = '';
   jogosNaoListados = true;
+  consoleAtual = '';
 
   constructor(
     private router: Router,
@@ -23,6 +24,7 @@ export class MenuPrincipalComponent {
   selecionaConsole(consolePlataforma) {
 
     this.consoleSelecionado = consolePlataforma;
+    this.consoleAtual = consolePlataforma.toUpperCase();
     this.jogosNaoListados = false;
     this.consultaJogos()
     //this.router.navigateByUrl('/lista-jogos');
