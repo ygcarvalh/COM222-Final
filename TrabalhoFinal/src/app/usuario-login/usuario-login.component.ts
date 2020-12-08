@@ -62,7 +62,7 @@ export class UsuarioLoginComponent implements OnInit {
                       })
 
                       this.statusUser.setStatusUserLogado(false);
-                      this.router.navigateByUrl('/lista-jogos');
+                      this.router.navigateByUrl('/menu-principal');
                       statusLogin = 1;
 
                 }

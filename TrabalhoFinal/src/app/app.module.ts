@@ -9,7 +9,6 @@ import { UsuarioRegistroComponent } from './usuario-registro/usuario-registro.co
 import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
 import { jogosRegistroComponent } from './jogos-registro/jogos-registro.component';
 import { ListaReviewsComponent } from './lista-reviews/lista-reviews.component';
-import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { CriarReviewComponent } from './criar-review/criar-review.component';
 
@@ -20,7 +19,6 @@ import { CriarReviewComponent } from './criar-review/criar-review.component';
     jogosRegistroComponent,
     UsuarioLoginComponent,
     ListaReviewsComponent,
-    ListaJogosComponent,
     MenuPrincipalComponent,
     CriarReviewComponent
   ],
