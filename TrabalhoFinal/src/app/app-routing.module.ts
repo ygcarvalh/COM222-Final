@@ -6,7 +6,6 @@ import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
 import { ListaReviewsComponent } from './lista-reviews/lista-reviews.component';
 import { CriarReviewComponent } from './criar-review/criar-review.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
-import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
 
 const routes: Routes = [
 	{ path: '', component: MenuPrincipalComponent },
@@ -15,7 +14,7 @@ const routes: Routes = [
 	{ path: 'jogo-registro', component: jogosRegistroComponent },
 	{ path: 'lista-reviews', component: ListaReviewsComponent },
 	{ path: 'criar-review', component: CriarReviewComponent },
-	{ path: 'lista-jogos', component: ListaJogosComponent }
+	{ path: 'menu-principal', component: MenuPrincipalComponent }
 ];
 
 @NgModule({
