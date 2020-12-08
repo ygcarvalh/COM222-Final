@@ -4,12 +4,8 @@
         <h4 *ngIf="usuarioNaoLogado">Efetue Login para poder cadastrar uma review</h4>
         <form *ngIf="!usuarioNaoLogado" #orderForm="ngForm">
             <div class="form-group">
-                <label for="nomeReview">Nome</label>
-                <input type="text" class="form-control" id="nomeReview" aria-describedby="review_jogo" [(ngModel)]="reviewModel.nome" name="review">
-            </div>
-            <div class="form-group">
-                <label for="reviewJogo">Review</label>
-                <textarea type="text" class="form-control" id="reviewJogo" aria-describedby="review_jogo" [(ngModel)]="reviewModel.review" name="review"></textarea>
+                <label for="reviewJogo">Nome</label>
+                <input type="text" class="form-control" id="reviewJogo" aria-describedby="review_jogo" [(ngModel)]="reviewModel.review" name="review">
             </div>
             <div class="form-group">
                 <label for="rating_jogo">Avaliação</label>
