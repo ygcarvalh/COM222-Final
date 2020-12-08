@@ -9,7 +9,7 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 import { ListaJogosComponent } from './lista-jogos/lista-jogos.component';
 
 const routes: Routes = [
-	{ path: 'menu-principal', component: MenuPrincipalComponent },
+	{ path: '', component: MenuPrincipalComponent },
 	{ path: 'usuario-registro', component: UsuarioRegistroComponent },
 	{ path: 'usuario-login', component: UsuarioLoginComponent },
 	{ path: 'jogo-registro', component: jogosRegistroComponent },
