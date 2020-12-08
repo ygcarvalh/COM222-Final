@@ -34,8 +34,8 @@ export class MenuPrincipalComponent {
     this.jogoService.get()
       .subscribe(
         data => {
+          this.listaJogos = []
           data.forEach(element => {
-
             if (element.console == this.consoleSelecionado)
               //console.log(this.listaJogos)
               this.listaJogos.push(element);
