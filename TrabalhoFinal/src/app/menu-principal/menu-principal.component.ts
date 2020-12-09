@@ -171,7 +171,7 @@ export class MenuPrincipalComponent {
 
   calcularMediaReview(jogo) {
 
-    let media = 0;
+    let mediaJogo = 0;
     let cont = 0;
     let somatorio = 0;
     this.reviewService.get()
@@ -188,11 +188,19 @@ export class MenuPrincipalComponent {
 
           });
 
-         media = somatorio / cont;
-         console.log(media)
+         mediaJogo = somatorio / cont;
+         console.log(mediaJogo)
 
          //retorna os dados do jogo em um vetor
          let jogoDados = this.getDadosJogo(jogo)
+
+         console.log(jogoDados);
+         console.log(jogo);
+
+         this.jogoService.updateJogo({
+           console: jogoDados[0], titulo: jogoDados[1], resumo: jogoDados[2],
+            dev: jogoDados[3], genero: jogoDados[4], media: String(mediaJogo), pathImagem: "",
+         },jogo);
 
         },
         error => {

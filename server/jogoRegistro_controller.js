@@ -32,4 +32,22 @@ router.get('/', function(req , res){
     
 })
 
+router.put('/', function(req, res){
+    Jogo.update(
+        {
+            "_id": req.body._id,
+        },
+        {
+            $set : {
+                "media": req.body.media
+            }
+        }
+    ).save((err, jog)=>{
+        if(err)
+            res.status(500).send(err);
+        else
+            res.status(200).send(jog);
+    })
+})
+
 module.exports = router;
