@@ -18,4 +18,9 @@
 ## Comandos que talvez sejam necessários:
 Caso a seção anterior não seja suficiente para rodar o programa, deve-se executar o seguinte passo:
 
-1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install mongoose**, **npm install express**,**npm install cors**,**npm install router**, **npm install body-parser**;
+1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando:
+1. **npm install mongoose**;
+2. **npm install express**;
+3. **npm install cors**;
+4. **npm install router**;
+5. **npm install body-parser**;
