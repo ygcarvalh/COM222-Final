@@ -128,7 +128,7 @@ export class MenuPrincipalComponent {
 
     }
 
-    
+
     if (this.reviewModel.nota < 0 || this.reviewModel.nota > 10 || !this.reviewModel.nota) {
 
       const Toast = Swal.mixin({
@@ -162,9 +162,35 @@ export class MenuPrincipalComponent {
           this.clearFields();
           this.listarReview(this.id_jogo);
           this.voltaMenuPrincipal();
+          this.calcularMediaReview(this.id_jogo);
         },
         (err) => console.error(err)
       )
+  }
+
+
+  calcularMediaReview(jogo) {
+
+    this.id_jogo = jogo;
+    let media = 0;
+
+    this.reviewService.get()
+      .subscribe(
+        data => {
+        
+          let array = data
+          array.forEach(element => {
+            if (element.jogo == this.id_jogo)
+              media += element.nota;
+          });
+
+          //media depois de cada review do jogo
+          console.log(media/array.length);
+        },
+        error => {
+          console.log(error);
+        });
+
   }
 
   clearFields() {
