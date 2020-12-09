@@ -35,6 +35,143 @@ export class jogosRegistroComponent implements OnInit {
 
     onSubmit() {
 
+        if(this.consoleJogo == '-1' || !this.consoleJogo){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'error',
+                title: 'Por favor, informe o console!'
+              })
+
+              return;
+            
+        }
+
+        if(this.consoleJogo == '-1' || !this.consoleJogo){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'error',
+                title: 'Por favor, informe o console!'
+              })
+
+              return;
+            
+        }
+
+        if(this.tituloJogo == '' || !this.tituloJogo){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'error',
+                title: 'Por favor, informe o título!'
+              })
+
+              return;
+            
+        }
+
+        if(this.resumoJogo == '' || !this.resumoJogo){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'error',
+                title: 'Por favor, informe o resumo!'
+              })
+
+              return;
+            
+        }
+
+        if(this.devJogo == '' || !this.devJogo){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'error',
+                title: 'Por favor, informe o desenvolvedor!'
+              })
+
+              return;
+            
+        }
+
+        if(this.generoJogo == '-1' || !this.generoJogo){
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'error',
+                title: 'Por favor, informe o gênero!'
+              })
+
+              return;
+            
+        }
         this.jogoService.add({
             console: this.consoleJogo, titulo: this.tituloJogo, resumo: this.resumoJogo,
             dev: this.devJogo, genero: this.generoJogo, pathImagem: this.pathImagemJogo

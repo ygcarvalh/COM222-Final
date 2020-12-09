@@ -22,6 +22,7 @@ export class UsuarioLoginComponent implements OnInit {
     senhaLogin: string;
 
 
+    
     usuarioNaoLogado = this.statusUser.getStatusUserLogado();
 
     user : any;
@@ -44,6 +45,7 @@ export class UsuarioLoginComponent implements OnInit {
                 
                 if(element.email == email_registro && element.senha == senha_registro){
 
+                  this.statusUser.setNomeUser(element.nome)
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',

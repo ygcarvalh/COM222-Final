@@ -15,141 +15,209 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 export class MenuPrincipalComponent {
 
-	usuarioNaoLogado = this.statusUser.getStatusUserLogado();
+  usuarioNaoLogado = this.statusUser.getStatusUserLogado();
 
-	reviewModel = new Review("", 0, '');
-	listaJogos = [];
-	listaReview = [];
-	consoleSelecionado = '';
-	jogosNaoListados = true;
-	reviewsNaoListadas = true;
-	criarReview = false;
-	consoleAtual = '';
-	id_jogo = '';
-	listaItens = [];
+  reviewModel = new Review("", 0, '');
+  listaJogos = [];
+  listaReview = [];
+  consoleSelecionado = '';
+  jogosNaoListados = true;
+  reviewsNaoListadas = true;
+  criarReview = false;
+  consoleAtual = '';
+  id_jogo = '';
 
-	itemSelecionado = '';
-	itemLista = "";
+  constructor(
+    private router: Router,
+    private jogoService: JogoService,
+    private reviewService: ReviewService,
+    private statusUser: AppComponent,
 
-	constructor(
-		private router: Router,
-		private jogoService: JogoService,
-		private reviewService: ReviewService,
-		private statusUser: AppComponent,
-
-	) { }
+  ) { }
 
 
-	selecionaConsole(consolePlataforma) {
+  selecionaConsole(consolePlataforma) {
 
-		this.consoleSelecionado = consolePlataforma;
-		this.consoleAtual = consolePlataforma.toUpperCase();
-		this.jogosNaoListados = false;
-		this.consultaJogos();
-		//this.router.navigateByUrl('/lista-jogos');
+    this.consoleSelecionado = consolePlataforma;
+    this.consoleAtual = consolePlataforma.toUpperCase();
+    this.jogosNaoListados = false;
+    this.consultaJogos()
+    //this.router.navigateByUrl('/lista-jogos');
 
-	}
+  }
 
-	consultaJogos() {
+  consultaJogos() {
 
-		this.jogoService.get()
-			.subscribe(
-				data => {
-					this.listaJogos = []
-					this.listaItens = ["Ação", "Aventura", "Estratégia", "RPG", "Esporte", "Simulação"];
-					data.forEach(element => {
-						if (element.console == this.consoleSelecionado) {
-							//console.log(this.listaJogos)
-							this.listaJogos.push(element);
-							this.listaItens.push(element.dev);
-							// console.log(this.listaItens);
-						}
-					});
-				},
-				error => {
-					console.log(error);
-				});
-	}
+    this.jogoService.get()
+      .subscribe(
+        data => {
+          this.listaJogos = []
+          data.forEach(element => {
+            if (element.console == this.consoleSelecionado)
+              //console.log(this.listaJogos)
+              this.listaJogos.push(element);
 
-	voltaMenuPrincipal() {
+          });
+        },
+        error => {
+          console.log(error);
+        });
+  }
 
-		this.jogosNaoListados = true;
-		this.reviewsNaoListadas = true;
-		this.criarReview = false;
-	}
+  voltaMenuPrincipal() {
 
-	listarReview(id) {
+    this.jogosNaoListados = true;
+    this.reviewsNaoListadas = true;
+    this.criarReview = false;
+  }
 
-		this.reviewsNaoListadas = false;
-		this.jogosNaoListados = true;
+  listarReview(id) {
 
-		this.id_jogo = id;
+    this.reviewsNaoListadas = false;
+    this.jogosNaoListados = true;
 
-		this.reviewService.get()
-			.subscribe(
-				data => {
-					this.listaReview = []
-					let array = data
-					array.forEach(element => {
-						if (element.jogo == this.id_jogo)
-							this.listaReview.push(element);
-					});
-				},
-				error => {
-					console.log(error);
-				});
-	}
+    this.id_jogo = id;
 
-	cadastroReview() {
+    this.reviewService.get()
+      .subscribe(
+        data => {
+          this.listaReview = []
+          let array = data
+          array.forEach(element => {
+            if (element.jogo == this.id_jogo)
+              this.listaReview.push(element);
+          });
+        },
+        error => {
+          console.log(error);
+        });
+  }
 
-		console.log(this.id_jogo)
-		this.criarReview = true;
-		// this.reviewsNaoListadas = true;
-	}
+  cadastroReview() {
 
-	onSubmit() {
+    console.log(this.id_jogo)
+    this.criarReview = true;
+    this.reviewsNaoListadas = true;
+    // this.reviewsNaoListadas = true;
+  }
 
-		//cadastro das reviews
-		this.reviewService.add({
-			review: this.reviewModel.review, nota: this.reviewModel.nota, jogo: this.id_jogo
+  onSubmit() {
 
-		})
-			.subscribe(
-				(jog) => {
-					console.log(jog);
-					this.clearFields();
-					this.listarReview(this.id_jogo);
-				},
-				(err) => console.error(err)
-			)
-	}
+    //cadastro das reviews
 
-	clearFields() {
-		this.reviewModel.review = '';
-		this.reviewModel.nota = 0;
+    if (this.reviewModel.review == '' || !this.reviewModel.review) {
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Por favor, informe a review!'
+      })
+
+      return;
+
+    }
 
 
-		const Toast = Swal.mixin({
-			toast: true,
-			position: 'top-end',
-			showConfirmButton: false,
-			timer: 3000,
-			timerProgressBar: true,
-			didOpen: (toast) => {
-				toast.addEventListener('mouseenter', Swal.stopTimer)
-				toast.addEventListener('mouseleave', Swal.resumeTimer)
-			}
-		})
+    if (this.reviewModel.nota < 0 || this.reviewModel.nota > 10 || !this.reviewModel.nota) {
 
-		Toast.fire({
-			icon: 'success',
-			title: 'Review Cadastrada com sucesso!'
-		})
-	}
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
 
-	calcularMedia() {
-	}
+      Toast.fire({
+        icon: 'error',
+        title: 'Por favor, informe uma nota válida! (1 até 10) '
+      })
 
-	aplicarFiltro() { }
+      return;
+
+    }
+
+    this.reviewService.add({
+      review: this.reviewModel.review, nota: this.reviewModel.nota, jogo: this.id_jogo
+
+    })
+      .subscribe(
+        (jog) => {
+          console.log(jog);
+          this.clearFields();
+          this.listarReview(this.id_jogo);
+          this.voltaMenuPrincipal();
+          this.calcularMediaReview(this.id_jogo);
+        },
+        (err) => console.error(err)
+      )
+  }
+
+
+  calcularMediaReview(jogo) {
+
+    let media = 0;
+    let cont = 0;
+    this.reviewService.get()
+      .subscribe(
+        data => {
+        
+          let array = data
+          array.forEach(element => {
+           
+            if (element.jogo === jogo){
+              media += element.nota;
+              cont++;
+            }
+             
+          });
+
+         //media do jogo
+         //jogo
+          console.log(media/cont);
+        },
+        error => {
+          console.log(error);
+        });
+
+  }
+
+  clearFields() {
+    this.reviewModel.review = '';
+    this.reviewModel.nota = 0;
+
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Review Cadastrada com sucesso!'
+    })
+  }
 
 }
