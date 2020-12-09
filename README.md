@@ -14,8 +14,4 @@
 6. O programa será iniciado sozinho.
 
 ## Comandos que talvez sejam necessários:
-1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install mongoose**
-2. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install express**
-3. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install cors**
-4. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install router**
-5. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install body-parser**
+1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install mongoose**, **npm install express**,**npm install cors**,**npm install router**, **npm install body-parser**;
