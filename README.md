@@ -14,4 +14,4 @@
 6. O programa será iniciado sozinho.
 
 ## Comandos que talvez sejam necessários:
-1. Na pasta do projeto **TrabalhoFinal**, abrir no *cmd* e executar o comando: **npm install mongoose**
+1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install mongoose**
