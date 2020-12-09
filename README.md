@@ -12,3 +12,8 @@
 4. No *cmd* da pasta **server** executar o comando: **node app**. Aguardar até que o servidor esteja carregado;
 5. No *cmd* da pasta **TrabalhoFinal** executar o comando: **ng serve --o**;
 6. O programa será iniciado sozinho.
+
+## Comandos que talvez sejam necessários:
+1.
+2.
+3.
