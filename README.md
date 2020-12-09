@@ -15,3 +15,6 @@
 
 ## Comandos que talvez sejam necessários:
 1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install mongoose**
+2. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install express**
+3. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install cors**
+4. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install router**
