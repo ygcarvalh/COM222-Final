@@ -14,4 +14,6 @@
 6. O programa será iniciado sozinho.
 
 ## Comandos que talvez sejam necessários:
+Caso a seção anterior não seja suficiente para rodar o programa, deve-se executar o seguinte passo:
+
 1. Na pasta do projeto **TrabalhoFinal** e na pasta **server**, abrir no *cmd* e executar o comando: **npm install mongoose**, **npm install express**,**npm install cors**,**npm install router**, **npm install body-parser**;
