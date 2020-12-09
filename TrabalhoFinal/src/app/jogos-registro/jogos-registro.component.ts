@@ -24,6 +24,7 @@ export class jogosRegistroComponent implements OnInit {
     devJogo: string;
     generoJogo: string;
     pathImagemJogo: string;
+    mediaJogo: number;
 
 
     usuarioNaoLogado = this.statusUser.getStatusUserLogado();

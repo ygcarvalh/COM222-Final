@@ -2,38 +2,46 @@
     <div class="row">
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <img class="card-img-top imagem-menu-principal" src="../../assets/images/xbox-logo.png" alt="Card image cap">
+                <img class="card-img-top imagem-menu-principal" src="../../assets/images/xbox-logo.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text text-center">Xbox</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('xbox')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('xbox')">Selecionar Console</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <a href="#"><img class="card-img-top imagem-menu-principal" src="../../assets/images/playstation-logo.png" alt="Card image cap" style="width: 194px;"></a>
+                <a href="#"><img class="card-img-top imagem-menu-principal"
+                        src="../../assets/images/playstation-logo.png" alt="Card image cap" style="width: 194px;"></a>
                 <div class="card-body">
                     <p class="card-text text-center">Playstation</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('playstation')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('playstation')">Selecionar Console</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <img class="card-img-top imagem-menu-principal" src="../../assets/images/switch-logo.png" alt="Card image cap">
+                <img class="card-img-top imagem-menu-principal" src="../../assets/images/switch-logo.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text text-center">Nintendo Switch</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('switch')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('switch')">Selecionar Console</button>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-3 mt-5">
             <div class="card botoes-menu-principal">
-                <img class="card-img-top imagem-menu-principal" src="../../assets/images/computer-logo.png" alt="Card image cap">
+                <img class="card-img-top imagem-menu-principal" src="../../assets/images/computer-logo.png"
+                    alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text text-center">Computador</p>
-                    <button class="btn btn-primary text-center botao-menu-principal" (click)="selecionaConsole('pc')">Selecionar Console</button>
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="selecionaConsole('pc')">Selecionar Console</button>
                 </div>
             </div>
         </div>
@@ -44,24 +52,38 @@
     <h3>
         <center>{{consoleAtual}}</center>
     </h3>
-    <div class="row">
-        <div *ngFor="let jogo of listaJogos" class="card col-sm-3 col-md-4 mt-5 ml-3" style="width: 20rem;">
-            <a routerLink="/lista-reviews"><img src="..." class="card-img-top" alt="Imagem do Jogo"></a>
-            <div class="card-body">
-                <h5 class="card-title"><a (click)="listarReview(jogo._id)">{{jogo.titulo}}</a></h5>
-                <p class="card-text">{{jogo.resumo}}</p>
-            </div>
-            <ul class="list-group list-group-flush">
 
-                <li class="list-group-item">Desenvolvedora: {{jogo.dev}}</li>
-                <li class="list-group-item">Gênero: {{jogo.genero}}</li>
-                <li class="list-group-item">Nota</li>
-            </ul>
+    <form *ngIf="!jogosNaoListados" #orderForm="ngForm">
+        <div class="form-group row">
+            <label for="filtroBusca" class="form-label">Busca</label>
+            <input class="form-control" list="datalistOptions" id="filtroBusca" placeholder="...">
+            <datalist id="datalistOptions">
+                <option *ngFor="let item of listaItens" id="itemElemento">{{item}}</option>
+            </datalist>
+            <button type="submit" class="btn btn-primary " (click)="aplicarFiltro()">Aplicar Filtro</button>
         </div>
-        <div class="col-md-2 mt-5">
-            <button class="btn btn-primary text-center botao-menu-principal" (click)="voltaMenuPrincipal()">Voltar</button>
+
+    </form>
+
+    <div class=" row">
+                <div *ngFor="let jogo of listaJogos" class="card col-sm-3 col-md-4 mt-5 ml-3" style="width: 20rem;">
+                    <a routerLink="/lista-reviews"><img src="..." class="card-img-top" alt="Imagem do Jogo"></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a (click)="listarReview(jogo._id)">{{jogo.titulo}}</a></h5>
+                        <p class="card-text">{{jogo.resumo}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">Desenvolvedora: {{jogo.dev}}</li>
+                        <li class="list-group-item">Gênero: {{jogo.genero}}</li>
+                        <li class="list-group-item">Nota: {{jogo.media}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mt-5">
+                    <button class="btn btn-primary text-center botao-menu-principal"
+                        (click)="voltaMenuPrincipal()">Voltar</button>
+                </div>
         </div>
-    </div>
 </div>
 
 <div *ngIf="!reviewsNaoListadas" class="container">
@@ -95,11 +117,13 @@
             <form *ngIf="!usuarioNaoLogado" #orderForm="ngForm">
                 <div class="form-group">
                     <label for="reviewJogo">Review</label>
-                    <input type="text" class="form-control" id="reviewJogo" aria-describedby="review_jogo" [(ngModel)]="reviewModel.review" name="review">
+                    <input type="text" class="form-control" id="reviewJogo" aria-describedby="review_jogo"
+                        [(ngModel)]="reviewModel.review" name="review">
                 </div>
                 <div class="form-group">
                     <label for="rating_jogo">Avaliação</label>
-                    <input min="0" max="10" type="number" class="form-control" id="rating_jogo" aria-describedby="rating_help" [(ngModel)]="reviewModel.nota" name="nota">
+                    <input min="0" max="10" type="number" class="form-control" id="rating_jogo"
+                        aria-describedby="rating_help" [(ngModel)]="reviewModel.nota" name="nota">
                 </div>
                 <button type="submit" class="btn btn-primary" (click)="onSubmit()">Registrar Review</button>
             </form>
