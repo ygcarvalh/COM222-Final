@@ -13,6 +13,8 @@
 5. No *cmd* da pasta **TrabalhoFinal** executar o comando: **ng serve --o**;
 6. O programa será iniciado sozinho.
 
+**OBS: Para acessar a lista de Reviews, deve-se clicar no nome do jogo.**
+
 ## Comandos que talvez sejam necessários:
 Caso a seção anterior não seja suficiente para rodar o programa, deve-se executar o seguinte passo:
 
