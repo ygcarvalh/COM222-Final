@@ -97,6 +97,7 @@ export class MenuPrincipalComponent {
 
     console.log(this.id_jogo)
     this.criarReview = true;
+    this.reviewsNaoListadas = true;
     // this.reviewsNaoListadas = true;
   }
 
@@ -111,7 +112,8 @@ export class MenuPrincipalComponent {
         (jog) => {
           console.log(jog);
           this.clearFields();
-          this.listarReview(this.id_jogo)
+          this.listarReview(this.id_jogo);
+          this.voltaMenuPrincipal();
         },
         (err) => console.error(err)
       )
