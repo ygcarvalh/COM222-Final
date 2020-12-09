@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 
 export class AppComponent {
   usuarioNaoLogado = true;
+  nomeUser = '';
 
   constructor( private router: Router) { }
   getStatusUserLogado() {
@@ -22,6 +23,11 @@ export class AppComponent {
 
     this.usuarioNaoLogado = status;
 
+  }
+
+  setNomeUser(nome){
+
+    this.nomeUser = nome;
   }
 
   logout() {

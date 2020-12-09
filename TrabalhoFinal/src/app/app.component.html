@@ -15,7 +15,8 @@
             <button class="btn btn-outline-success my-2 my-sm-0 botao-cadastro" type="button" routerLink="/usuario-registro">Cadastro</button>
         </form>
         <form *ngIf="!usuarioNaoLogado" class="form-inline my-2 my-lg-0">
-            <button (click)="logout()" class="btn btn-outline-danger my-1 my-sm-0 botao-login" type="button" routerLink="/usuario-login">Sair</button>
+            <h4 style="color:white">Bem vindo (a): <small>{{nomeUser}}</small></h4>
+            <button (click)="logout()" class="btn btn-outline-danger ml-3 my-1 my-sm-0 botao-login" type="button" routerLink="/usuario-login">Sair</button>
         </form>
     </div>
 </nav>
