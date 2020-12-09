@@ -171,21 +171,25 @@ export class MenuPrincipalComponent {
 
   calcularMediaReview(jogo) {
 
-    this.id_jogo = jogo;
     let media = 0;
-
+    let cont = 0;
     this.reviewService.get()
       .subscribe(
         data => {
         
           let array = data
           array.forEach(element => {
-            if (element.jogo == this.id_jogo)
+           
+            if (element.jogo === jogo){
               media += element.nota;
+              cont++;
+            }
+             
           });
 
-          //media depois de cada review do jogo
-          console.log(media/array.length);
+         //media do jogo
+         //jogo
+          console.log(media/cont);
         },
         error => {
           console.log(error);
