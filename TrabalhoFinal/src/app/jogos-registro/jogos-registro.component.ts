@@ -171,7 +171,7 @@ export class jogosRegistroComponent implements OnInit {
         }
         this.jogoService.add({
             console: this.consoleJogo, titulo: this.tituloJogo, resumo: this.resumoJogo,
-            dev: this.devJogo, genero: this.generoJogo, pathImagem: this.pathImagemJogo
+            dev: this.devJogo, genero: this.generoJogo, media: '-', pathImagem: this.pathImagemJogo
         })
             .subscribe(
                 (jog) => {
