@@ -5,13 +5,12 @@ import { ReviewService } from '../reviewRegistro.service';
 import { AppComponent } from '../app.component'
 import { Review } from '../review';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-import { Jogo } from '../jogo';
 
 
 @Component({
-	selector: 'app-menu-principal',
-	templateUrl: './menu-principal.component.html',
-	styleUrls: ['./menu-principal.component.css'],
+  selector: 'app-menu-principal',
+  templateUrl: './menu-principal.component.html',
+  styleUrls: ['./menu-principal.component.css']
 })
 
 export class MenuPrincipalComponent {
@@ -78,7 +77,7 @@ export class MenuPrincipalComponent {
     this.jogosNaoListados = true;
 
     this.id_jogo = id;
-
+   
     this.reviewService.get()
       .subscribe(
         data => {
@@ -173,25 +172,28 @@ export class MenuPrincipalComponent {
   calcularMediaReview(jogo) {
 
     let media = 0;
-    let somatorio = 0;
     let cont = 0;
+    let somatorio = 0;
     this.reviewService.get()
       .subscribe(
         data => {
-        
+
           let array = data
           array.forEach(element => {
-           
-            if (element.jogo === jogo){
+
+            if (element.jogo === jogo) {
               somatorio += element.nota;
               cont++;
             }
 
-            media = somatorio/cont;
-             
           });
 
-          console.log(media);
+         media = somatorio / cont;
+         console.log(media)
+
+         //retorna os dados do jogo em um vetor
+         let jogoDados = this.getDadosJogo(jogo)
+
         },
         error => {
           console.log(error);
@@ -220,6 +222,25 @@ export class MenuPrincipalComponent {
       icon: 'success',
       title: 'Review Cadastrada com sucesso!'
     })
+  }
+
+  getDadosJogo(jogo) {
+
+    let dadosJogo = []
+    this.listaJogos.forEach(element => {
+
+      if (element._id == jogo) {
+
+        dadosJogo[0] = element.console;
+        dadosJogo[1] = element.titulo;
+        dadosJogo[2] = element.resumo;
+        dadosJogo[3] = element.dev;
+        dadosJogo[4] = element.genero;
+      }
+    });
+
+    return dadosJogo;
+
   }
 
 }

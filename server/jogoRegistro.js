@@ -1,3 +1,4 @@
+const { Double } = require('mongodb');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -7,6 +8,7 @@ var jogoRegistroSchema = new Schema({
     resumo: String,
     dev: String,
     genero: String,
+    media: String,
     pathImagem: String
 }, {versionKey: false});
 

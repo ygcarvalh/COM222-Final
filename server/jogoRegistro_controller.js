@@ -10,6 +10,7 @@ router.post('/', function(req , res){
         resumo: req.body.resumo,
         dev: req.body.dev,
         genero: req.body.genero,
+        media: req.body.media,
         pathImagem: req.body.pathImagem
     })
     j.save((err, jog) =>{
