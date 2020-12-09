@@ -5,6 +5,7 @@ import { ReviewService } from '../reviewRegistro.service';
 import { AppComponent } from '../app.component'
 import { Review } from '../review';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { Jogo } from '../jogo';
 
 
 @Component({
@@ -172,6 +173,7 @@ export class MenuPrincipalComponent {
   calcularMediaReview(jogo) {
 
     let media = 0;
+    let somatorio = 0;
     let cont = 0;
     this.reviewService.get()
       .subscribe(
@@ -181,15 +183,15 @@ export class MenuPrincipalComponent {
           array.forEach(element => {
            
             if (element.jogo === jogo){
-              media += element.nota;
+              somatorio += element.nota;
               cont++;
             }
+
+            media = somatorio/cont;
              
           });
 
-         //media do jogo
-         //jogo
-          console.log(media/cont);
+          console.log(media);
         },
         error => {
           console.log(error);

@@ -5,6 +5,7 @@ export class Jogo{
         public resumo: string,
         public dev: string,
         public genero: string,
-        public pathImagem: string
+        public pathImagem: string,
+        public media: string,
     ){}
 }

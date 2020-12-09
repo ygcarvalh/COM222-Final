@@ -21,4 +21,8 @@ export class JogoService{
         return this.http.post<Jogo>(this.url, j);
     }
 
+    updateJogo(j : Jogo): Observable<Jogo> {
+        return this.http.put<Jogo>(this.url, j);
+    }
+
 }
