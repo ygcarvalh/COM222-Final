@@ -104,6 +104,54 @@ export class MenuPrincipalComponent {
   onSubmit() {
 
     //cadastro das reviews
+
+    if (this.reviewModel.review == '' || !this.reviewModel.review) {
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Por favor, informe a review!'
+      })
+
+      return;
+
+    }
+
+    
+    if (this.reviewModel.nota < 0 || this.reviewModel.nota > 10 || !this.reviewModel.nota) {
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Por favor, informe uma nota válida! (1 até 10) '
+      })
+
+      return;
+
+    }
+
     this.reviewService.add({
       review: this.reviewModel.review, nota: this.reviewModel.nota, jogo: this.id_jogo
 
